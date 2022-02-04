@@ -1,0 +1,23 @@
+on:
+  pull_request:
+    types: [ opened, synchronize ]
+jobs:
+  test:
+    name: flutter format & analyze
+    runs-on: ubuntu-latest
+    steps:
+      - name: set up repository
+        uses: actions/checkout@v2
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '2.8.1'
+          channel: 'stable'
+          cache: true
+      - name: flutter pub get
+        run: flutter pub get
+      - name: format
+        run: flutter format --dry-run --set-exit-if-changed lib/
+      - name: analyze
+        run: flutter analyze
+      - name: test
+        run: flutter test --coverage
