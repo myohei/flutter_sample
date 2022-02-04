@@ -1,6 +1,9 @@
 on:
   pull_request:
     types: [ opened, synchronize ]
+  push:
+    branches:
+      - main
 jobs:
   test:
     name: flutter format & analyze
