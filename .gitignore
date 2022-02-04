@@ -48,6 +48,10 @@ app.*.map.json
 # fvm
 .fvm/flutter_sdk
 
+# Firebase
+**/google-services.json
+**/GoogleService-Info.plist
+
 ### Node template
 # Logs
 logs
