@@ -1,0 +1,15 @@
+{
+  "name": "flutter_sample",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "ssh://git@github.com/myohei/flutter_sample.git",
+  "author": "myohei <yohei.maeda.11@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "devDependencies": {
+    "husky": "^7.0.4"
+  },
+  "scripts": {
+    "prepare": "husky install"
+  }
+}
