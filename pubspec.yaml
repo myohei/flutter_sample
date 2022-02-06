@@ -22,15 +22,16 @@ environment:
   flutter: ">=2.5.0"
 
 dependencies:
-  flutter:
-    sdk: flutter
-  cupertino_icons: ^1.0.2
   auto_route: ^3.2.2
-  freezed: ^1.1.1
+  cupertino_icons: ^1.0.2
   dio: ^4.0.4
   firebase_core: ^1.12.0
   firebase_crashlytics: ^2.5.0
+  flutter:
+    sdk: flutter
   flutter_riverpod: ^1.0.3
+  freezed: ^1.1.1
+  riverpod: ^1.0.3
 
 dev_dependencies:
   auto_route_generator: ^3.2.1
