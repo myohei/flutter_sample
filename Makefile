@@ -26,3 +26,7 @@ build-runner:
 
 .PHONY: br
 br: build-runner
+
+.PHONY: test
+test:
+	${FLUTTER} test --coverage
