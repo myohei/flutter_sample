@@ -19,5 +19,5 @@ jobs:
         run: flutter format --dry-run --set-exit-if-changed lib/
       - name: analyze
         run: flutter analyze
-      - name: test
-        run: flutter test --coverage
+#      - name: test
+#        run: flutter test --coverage
