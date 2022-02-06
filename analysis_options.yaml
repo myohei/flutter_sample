@@ -1,12 +1,16 @@
 include: package:lints/recommended.yaml
 
 analyzer:
+  exclude:
+    - "**/*.g.dart" # freezed
+    - "**/*.freezed.dart" # freezed
   strong-mode:
     implicit-casts: false
     implicit-dynamic: false
   errors:
     missing_required_param: warning
     missing_return: warning
+    invalid_annotation_target: ignore # freezed
 
 linter:
   rules:
