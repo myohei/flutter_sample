@@ -15,7 +15,7 @@ analyze:
 
 .PHONY: format
 format:
-	@${FLUTTER} format lib/
+	@${FLUTTER} format --dry-run --set-exit-if-changed .
 
 .PHONY: fa
 fa: analyze format
