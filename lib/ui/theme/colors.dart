@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+// ignore: avoid_classes_with_only_static_members
 class AppColors {
   static final light = ColorScheme(
     background: Colors.white,
