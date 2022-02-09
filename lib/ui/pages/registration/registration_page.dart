@@ -51,7 +51,9 @@ class RegistrationPage extends HookConsumerWidget {
                 TextFormField(
                   maxLines: 1,
                   decoration: InputDecoration(
-                      labelText: 'パスワード(確認用)', hintText: 'xxxxx'),
+                    labelText: 'パスワード(確認用)',
+                    hintText: 'xxxxx',
+                  ),
                   onChanged: viewModel.setConfirmPassword,
                 ),
                 ElevatedButton(
