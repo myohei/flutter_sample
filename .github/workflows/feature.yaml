@@ -1,6 +1,11 @@
 on:
   pull_request:
     types: [ opened, synchronize ]
+    paths:
+      - '**.dart'
+      - 'pubspec.yaml'
+      - 'pubspec.lock'
+      - 'analysis_options.yaml'
 jobs:
   test:
     name: flutter format & analyze
