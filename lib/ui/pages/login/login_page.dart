@@ -1,12 +1,12 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '/ui/router/app_router.dart';
 
 typedef OnResult = void Function(bool loggedin);
 
-class LoginPage extends ConsumerWidget {
+class LoginPage extends HookConsumerWidget {
   const LoginPage({
     Key? key,
     this.onResult,
