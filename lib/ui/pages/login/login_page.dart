@@ -15,21 +15,25 @@ class LoginPage extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    return Container(
-      child: Column(
-        children: [
-          Text('LoginPage'),
-          TextButton(
-            onPressed: () {
-              if (onResult != null) {
-                onResult?.call(true);
-              } else {
-                context.router.replaceAll([HomeRoute()]);
-              }
-            },
-            child: Text('btn'),
-          )
-        ],
+    return Scaffold(
+      body: SafeArea(
+        child: Container(
+          child: Column(
+            children: [
+              Text('LoginPage'),
+              TextButton(
+                onPressed: () {
+                  if (onResult != null) {
+                    onResult?.call(true);
+                  } else {
+                    context.router.replaceAll([HomeRoute()]);
+                  }
+                },
+                child: Text('btn'),
+              )
+            ],
+          ),
+        ),
       ),
     );
   }
