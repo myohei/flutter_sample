@@ -2,6 +2,7 @@ enum AppExceptionType {
   network,
   badRequest,
   unauthorized,
+  notFound,
   cancel,
   timeout,
   server,
@@ -25,6 +26,10 @@ class AppException {
       message: e.toString(),
       type: AppExceptionType.badRequest,
     );
+  }
+
+  factory AppException.notFound(String message) {
+    return AppException._(message: message, type: AppExceptionType.notFound);
   }
 
   final String message;
