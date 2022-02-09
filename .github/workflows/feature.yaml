@@ -6,6 +6,7 @@ on:
       - 'pubspec.yaml'
       - 'pubspec.lock'
       - 'analysis_options.yaml'
+      - '.github/workflows/feature.yaml'
 jobs:
   test:
     name: flutter format & analyze
