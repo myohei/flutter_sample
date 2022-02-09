@@ -6,8 +6,12 @@ class HomePage extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    return Container(
-      child: Text('HomePage'),
+    return Scaffold(
+      body: SafeArea(
+        child: Container(
+          child: Text('HomePage'),
+        ),
+      ),
     );
   }
 }

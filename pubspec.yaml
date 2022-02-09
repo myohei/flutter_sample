@@ -30,8 +30,8 @@ dependencies:
   firebase_crashlytics: ^2.5.0
   flutter:
     sdk: flutter
-  flutter_riverpod: ^1.0.3
   freezed: ^1.1.1
+  hooks_riverpod: ^1.0.3
   riverpod: ^1.0.3
 
 dev_dependencies:
