@@ -1,8 +1,9 @@
-import 'package:auto_route/src/router/auto_router_x.dart';
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_sample/ui/router/app_router.dart';
-import 'package:flutter_sample/ui/view_model/user_view_model.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+
+import '/ui/router/app_router.dart';
+import '/ui/view_model/user_view_model.dart';
 
 class HomePage extends HookConsumerWidget {
   const HomePage({Key? key}) : super(key: key);

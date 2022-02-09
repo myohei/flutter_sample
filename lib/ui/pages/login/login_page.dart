@@ -1,11 +1,11 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_sample/ui/view_model/loading_state_view_model.dart';
-import 'package:flutter_sample/ui/view_model/user_view_model.dart';
-import 'package:flutter_sample/ui/widgets/loading_container.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '/ui/router/app_router.dart';
+import '/ui/view_model/loading_state_view_model.dart';
+import '/ui/view_model/user_view_model.dart';
+import '/ui/widgets/loading_container.dart';
 import 'login_view_model.dart';
 
 typedef OnResult = void Function(bool loggedin);

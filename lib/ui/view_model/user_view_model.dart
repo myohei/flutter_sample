@@ -33,8 +33,10 @@ class UserViewModel extends ChangeNotifier {
     notifyListeners();
   }
 
-  Future<AppException?> signIn(
-      {required String email, required String password}) async {
+  Future<AppException?> signIn({
+    required String email,
+    required String password,
+  }) async {
     final result = await _repo.signIn(email: email, password: password);
     return result.when(
       success: (data) {
@@ -45,8 +47,10 @@ class UserViewModel extends ChangeNotifier {
     );
   }
 
-  Future<AppException?> signUp(
-      {required String email, required String password}) async {
+  Future<AppException?> signUp({
+    required String email,
+    required String password,
+  }) async {
     final result = await _repo.signUp(email: email, password: password);
     return result.when(
       success: (data) {
