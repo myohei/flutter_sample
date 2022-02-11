@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '/ui/pages/home/home_page.dart';
+import '/ui/pages/home/settings/settings_page.dart';
+import '/ui/pages/home/todo/todo_page.dart';
 import '/ui/pages/login/login_page.dart';
 import '/ui/pages/registration/registration_page.dart';
 import '/ui/router/auth_guard.dart';
@@ -18,6 +20,10 @@ part 'provider.dart';
       page: HomePage,
       initial: true,
       guards: [AuthGuard],
+      children: [
+        AutoRoute<TodoPage>(path: 'todos', initial: true, page: TodoPage),
+        AutoRoute<SettingsPage>(path: 'settings', page: SettingsPage),
+      ],
     ),
     AutoRoute<LoginPage>(
       path: '/login',

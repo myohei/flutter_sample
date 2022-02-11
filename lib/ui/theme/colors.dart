@@ -7,7 +7,7 @@ class AppColors {
     onSecondary: Colors.black,
     onError: Colors.white,
     onPrimary: Colors.white,
-    primary: Colors.lime.shade600,
+    primary: Colors.blue.shade600,
     error: Colors.red,
     onBackground: Colors.black,
     brightness: Brightness.light,
