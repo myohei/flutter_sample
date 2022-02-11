@@ -14,7 +14,6 @@ class TodoForm extends HookConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final controller =
         useTextEditingController.fromValue(TextEditingValue.empty);
-    debugPrint('a');
     final valid = useState<bool>(false);
     useEffect(
       () {
