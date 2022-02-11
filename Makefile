@@ -30,3 +30,8 @@ br: build-runner
 .PHONY: test
 test:
 	${FLUTTER} test --coverage
+
+.PHONY: clean
+clean:
+	${FLUTTER} clean
+	${FLUTTER} pub get

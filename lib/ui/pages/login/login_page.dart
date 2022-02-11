@@ -44,12 +44,15 @@ class LoginPage extends HookConsumerWidget {
                   height: 32,
                 ),
                 TextFormField(
+                  keyboardType: TextInputType.emailAddress,
+                  autocorrect: false,
                   maxLines: 1,
                   decoration:
                       InputDecoration(labelText: 'Eメール', hintText: 'xxxxx'),
                   onChanged: viewModel.setEmail,
                 ),
                 TextFormField(
+                  keyboardType: TextInputType.visiblePassword,
                   maxLines: 1,
                   obscureText: true,
                   decoration:
