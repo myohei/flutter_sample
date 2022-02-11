@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_sample/ui/hooks/use_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
+import '/ui/hooks/use_router.dart';
 import '/ui/pages/registration/registration_view_model.dart';
 import '/ui/router/app_router.dart';
 import '/ui/view_model/loading_state_view_model.dart';
