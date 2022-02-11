@@ -9,17 +9,20 @@ import '/app.dart';
 import '/data/providers/firebase_provider.dart';
 
 Future<void> main() async {
-  await runZonedGuarded<Future<void>>(() async {
-    WidgetsFlutterBinding.ensureInitialized();
-    final fbApp = await Firebase.initializeApp();
-    FlutterError.onError = FirebaseCrashlytics.instance.recordFlutterError;
-    runApp(
-      ProviderScope(
-        overrides: [
-          firebaseAppProvider.overrideWithValue(fbApp),
-        ],
-        child: MyApp(),
-      ),
-    );
-  }, (error, stack) => FirebaseCrashlytics.instance.recordError(error, stack));
+  await runZonedGuarded<Future<void>>(
+    () async {
+      WidgetsFlutterBinding.ensureInitialized();
+      final fbApp = await Firebase.initializeApp();
+      FlutterError.onError = FirebaseCrashlytics.instance.recordFlutterError;
+      runApp(
+        ProviderScope(
+          overrides: [
+            firebaseAppProvider.overrideWithValue(fbApp),
+          ],
+          child: MyApp(),
+        ),
+      );
+    },
+    (error, stack) => FirebaseCrashlytics.instance.recordError(error, stack),
+  );
 }
