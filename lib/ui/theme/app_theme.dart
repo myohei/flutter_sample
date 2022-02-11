@@ -11,8 +11,12 @@ class AppTheme {
   factory AppTheme.light() {
     const mode = ThemeMode.light;
     final colorScheme = AppColors.light;
-    final themeData = ThemeData.light().copyWith(
+    final src = ThemeData.light();
+    final themeData = src.copyWith(
       colorScheme: colorScheme,
+      bottomNavigationBarTheme: src.bottomNavigationBarTheme.copyWith(
+        backgroundColor: colorScheme.surface,
+      ),
     );
     return AppTheme(
       mode: mode,

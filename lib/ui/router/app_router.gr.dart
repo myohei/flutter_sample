@@ -35,12 +35,31 @@ class _$AppRouter extends RootStackRouter {
     RegistrationRoute.name: (routeData) {
       return MaterialPageX<RegistrationPage>(
           routeData: routeData, child: const RegistrationPage());
+    },
+    TodoRoute.name: (routeData) {
+      return MaterialPageX<TodoPage>(
+          routeData: routeData, child: const TodoPage());
+    },
+    SettingsRoute.name: (routeData) {
+      return MaterialPageX<SettingsPage>(
+          routeData: routeData, child: const SettingsPage());
     }
   };
 
   @override
   List<RouteConfig> get routes => [
-        RouteConfig(HomeRoute.name, path: '/', guards: [authGuard]),
+        RouteConfig(HomeRoute.name, path: '/', guards: [
+          authGuard
+        ], children: [
+          RouteConfig('#redirect',
+              path: '',
+              parent: HomeRoute.name,
+              redirectTo: 'todos',
+              fullMatch: true),
+          RouteConfig(TodoRoute.name, path: 'todos', parent: HomeRoute.name),
+          RouteConfig(SettingsRoute.name,
+              path: 'settings', parent: HomeRoute.name)
+        ]),
         RouteConfig(LoginRoute.name, path: '/login'),
         RouteConfig(RegistrationRoute.name, path: '/registration')
       ];
@@ -49,7 +68,8 @@ class _$AppRouter extends RootStackRouter {
 /// generated route for
 /// [HomePage]
 class HomeRoute extends PageRouteInfo<void> {
-  const HomeRoute() : super(HomeRoute.name, path: '/');
+  const HomeRoute({List<PageRouteInfo>? children})
+      : super(HomeRoute.name, path: '/', initialChildren: children);
 
   static const String name = 'HomeRoute';
 }
@@ -84,4 +104,20 @@ class RegistrationRoute extends PageRouteInfo<void> {
       : super(RegistrationRoute.name, path: '/registration');
 
   static const String name = 'RegistrationRoute';
+}
+
+/// generated route for
+/// [TodoPage]
+class TodoRoute extends PageRouteInfo<void> {
+  const TodoRoute() : super(TodoRoute.name, path: 'todos');
+
+  static const String name = 'TodoRoute';
+}
+
+/// generated route for
+/// [SettingsPage]
+class SettingsRoute extends PageRouteInfo<void> {
+  const SettingsRoute() : super(SettingsRoute.name, path: 'settings');
+
+  static const String name = 'SettingsRoute';
 }
