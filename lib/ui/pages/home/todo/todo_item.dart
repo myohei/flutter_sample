@@ -45,6 +45,31 @@ class TodoItem extends HookConsumerWidget {
                 Icons.delete,
               ),
               onPressed: () async {
+                final result = await showDialog<bool?>(
+                      context: context,
+                      builder: (context) => AlertDialog(
+                        title: Text('確認'),
+                        content: Text('削除しますか？'),
+                        actions: [
+                          TextButton(
+                            onPressed: () {
+                              Navigator.of(context).pop(false);
+                            },
+                            child: Text('いいえ'),
+                          ),
+                          TextButton(
+                            onPressed: () {
+                              Navigator.of(context).pop(true);
+                            },
+                            child: Text('はい'),
+                          ),
+                        ],
+                      ),
+                    ) ??
+                    false;
+                if (!result) {
+                  return;
+                }
                 await ref.read(loadingStateViewModelProvider).loadingWhile(
                       () => ref
                           .read(todoViewModelProvider.notifier)

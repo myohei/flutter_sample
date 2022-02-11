@@ -1,7 +1,7 @@
-import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
+import '/ui/hooks/use_router.dart';
 import '/ui/pages/registration/registration_view_model.dart';
 import '/ui/router/app_router.dart';
 import '/ui/view_model/loading_state_view_model.dart';
@@ -13,6 +13,7 @@ class RegistrationPage extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final router = useRouter();
     final viewModel = ref.watch(registrationViewModelProvider);
     final loadingState = ref.watch(loadingStateViewModelProvider);
     return Scaffold(
@@ -44,18 +45,21 @@ class RegistrationPage extends HookConsumerWidget {
                 ),
                 TextFormField(
                   maxLines: 1,
+                  obscureText: true,
                   decoration:
                       InputDecoration(labelText: 'パスワード', hintText: 'xxxxx'),
                   onChanged: viewModel.setPassword,
                 ),
                 TextFormField(
                   maxLines: 1,
+                  obscureText: true,
                   decoration: InputDecoration(
                     labelText: 'パスワード(確認用)',
                     hintText: 'xxxxx',
                   ),
                   onChanged: viewModel.setConfirmPassword,
                 ),
+                SizedBox(height: 40),
                 ElevatedButton(
                   onPressed: !viewModel.isValid
                       ? null
@@ -71,7 +75,7 @@ class RegistrationPage extends HookConsumerWidget {
                             // TODO(mae): show dialog
                             return;
                           }
-                          await context.router.replaceAll([HomeRoute()]);
+                          await router.replaceAll([HomeRoute()]);
                         },
                   child: Text('会員登録'),
                 ),
