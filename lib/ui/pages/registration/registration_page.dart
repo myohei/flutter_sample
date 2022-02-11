@@ -39,6 +39,8 @@ class RegistrationPage extends HookConsumerWidget {
                 ),
                 TextFormField(
                   maxLines: 1,
+                  autocorrect: false,
+                  keyboardType: TextInputType.emailAddress,
                   decoration:
                       InputDecoration(labelText: 'Eメール', hintText: 'xxxxx'),
                   onChanged: viewModel.setEmail,
