@@ -65,7 +65,7 @@ linter:
     - prefer_interpolation_to_compose_strings
     - prefer_relative_imports
     - prefer_single_quotes
-    - require_trailing_commas # MEMO(rmor): Status is still "experimental"
+    - require_trailing_commas
     - sort_child_properties_last
     - sort_constructors_first
     - sort_pub_dependencies
